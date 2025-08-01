@@ -3,7 +3,7 @@ import imagekit from "../configs/imageKit.js";
 import path from "path";
 import Blog from "../models/Blog.js";
 import main from "../configs/gemini.js";
-import Comment from "../models/comment.js";
+import Comment from "../models/Comment.js";
 export const addBlog = async (req, res) => {
   try {
     const { title, subTitle, description, category, isPublished } = JSON.parse(
