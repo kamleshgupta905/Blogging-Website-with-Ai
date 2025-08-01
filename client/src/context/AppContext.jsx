@@ -12,7 +12,7 @@ export const AppProvider = ({children}) =>{
   const navigate = useNavigate()
 
   const [token, setToken] = useState(null)
-  const [blog, setBlogs] = useState([])
+  const [blogs, setBlogs] = useState([])
   const [input, setInput] = useState("")
 
   const fetchBlogs = async () =>{
@@ -28,13 +28,13 @@ export const AppProvider = ({children}) =>{
     fetchBlogs();
     const token = localStorage.getItem('token')
     if(token) {
-      setToken()
+      setToken(token)
       axios.defaults.headers.common['Authorization'] = `${token}`
     }
   }, [])
 
   const value = {
-    axios, navigate, token, setToken, blog, setBlogs, input, setInput
+    axios, navigate, token, setToken, blogs, setBlogs, input, setInput
   }
 
   return (
